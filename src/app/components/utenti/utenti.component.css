@@ -137,6 +137,10 @@ button {
 
 @media (max-width: 568px) {
 
+    mat-card {
+        width: 300px;
+    }
+    
     .box-top {
         display: flex;
         flex-direction: column-reverse;
