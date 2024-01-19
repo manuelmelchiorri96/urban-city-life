@@ -84,9 +84,19 @@ mat-card-content {
     margin-bottom: 30px;
 }
 
+.box-actions-delete {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
 .p-delete {
     color: #3f51b5;
-
+    font-size: 1.2rem;
+    font-weight: 500;
+    white-space: nowrap;
 }
 
 .conferma-delete {
