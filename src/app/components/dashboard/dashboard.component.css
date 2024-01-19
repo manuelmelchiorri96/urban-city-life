@@ -1,0 +1,113 @@
+.box-top-page {
+    max-width: 85%;
+    margin: 0 auto;
+    margin-top: 140px;
+}
+
+.box-top-page .left h2 {
+    color: #3f51b5;
+    font-size: 1.7rem;
+    margin-bottom: 30px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+p {
+    color: #333;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.box-top-page .right .mat-form-field mat-form-field {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+}
+
+.box-post {
+    max-width: 85%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.post .single-post {
+    margin-bottom: 40px;
+}
+
+.card-header-left {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.icon {
+    margin-right: 8px;
+    font-size: 24px;
+}
+
+.card-header-left .icon {
+    transform: scale(1.2);
+    color: #2d3e94;
+}
+
+.card-header-left div {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2d3e94;
+    margin-top: 4px;
+}
+
+mat-card-content {
+    margin-top: 20px;
+    font-weight: 200;
+    font-size: 1rem;
+}
+
+mat-card-actions button {
+    margin-left: 5px;
+    margin-top: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mi-piace-attivo {
+    color: #2d3e94;
+}
+
+.text-commento {
+    margin-top: 30px;
+}
+
+.commenti {
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.post {
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.centrato {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.contenuto-centrato {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.icona-mi-dispiace {
+    transform: scale(1.5);
+    color: #2d3e94;
+    margin-top: 30px;
+}
