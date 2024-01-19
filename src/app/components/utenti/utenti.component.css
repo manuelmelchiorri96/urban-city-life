@@ -1,0 +1,128 @@
+h2 {
+    color: #3f51b5;
+    font-size: 1.7rem;
+    margin-bottom: 30px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+p {
+    color: #333;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+th {
+    font-weight: 600;
+}
+
+.box-top-page {
+    max-width: 85%;
+    margin: 0 auto;
+    margin-top: 140px;
+}
+
+.box-table {
+    max-width: 85%;
+    margin: 50px auto;
+}
+
+.custom-row {
+    border-bottom: 1px solid #ccc;
+}
+
+mat-paginator {
+    max-width: 85%;
+    margin: 0px auto;
+}
+
+.box-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+mat-form-field {
+    max-width: 75%;
+}
+
+.crea-user {
+    background-color: #3f51b5;
+    color: #fff;
+    margin-left: 60px;
+    padding: 20px;
+    align-self: flex-end;
+    margin-bottom: 20px;
+}
+
+.table {
+    width: 100%;
+    margin: 0 auto;
+    max-height: 50vh;
+    overflow: auto;
+}
+
+.mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+td,
+th {
+    width: 25%;
+}
+
+mat-card {
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    z-index: 9999;
+}
+
+mat-card-content {
+    margin-bottom: 30px;
+}
+
+.p-delete {
+    color: #3f51b5;
+
+}
+
+.conferma-delete {
+
+    background-color: #3f51b5;
+    color: #fff;
+    margin-right: 10px;
+    padding: 20px;
+}
+
+.annulla-delete {
+
+    background-color: #3f51b5;
+    color: #fff;
+    margin-left: 10px;
+    padding: 20px;
+}
+
+button {
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+
+    button {
+        white-space: nowrap;
+        width: 40%;
+    }
+
+}
+
+@media (min-width: 769px) and (max-width: 968px) {
+
+    button {
+        white-space: nowrap;
+        width: 30%;
+    }
+
+}
