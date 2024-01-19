@@ -24,6 +24,7 @@ describe('DashboardComponent', () => {
         MatIconModule,
       ],
       declarations: [DashboardComponent],
+      teardown: { destroyAfterEach: false },
     }).compileComponents();
 
     fixture = TestBed.createComponent(DashboardComponent);
