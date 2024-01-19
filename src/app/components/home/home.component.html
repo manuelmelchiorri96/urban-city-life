@@ -1,1 +1,16 @@
-<p>home works!</p>
+<div class="container">
+    <div class="carousel">
+        <div class="image-container">
+            <img [src]="slides[currentIndex]" class="img-fluid custom-height">
+            <div class="overlay">
+                <h1 *ngIf="currentIndex===0">{{'L\'app per lo sviluppo urbano.'}}</h1>
+                <h1 *ngIf="currentIndex===1">{{'Contribuisci per avere una città all\' avanguardia.'}}</h1>
+                <h1 *ngIf="currentIndex===2">{{'Insieme si cresce.'}}</h1>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <a (click)="onArrowClick(); prevSlide()" class="prev">&#10094;</a>
+            <a (click)="onArrowClick(); nextSlide()" class="next">&#10095;</a>
+        </div>
+    </div>
+</div>
