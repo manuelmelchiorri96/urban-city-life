@@ -203,7 +203,7 @@ L'applicazione si interfaccia con l'API di GoRest per fornire funzionalità di g
   - Endpoint: `/v2/posts/:postId/comments`
   - Descrizione: Ottiene i commenti di un post dato il suo ID.
 
-Questo progetto è stato generato con la versione 16.2.8. [Angular CLI](https://github.com/angular/angular-cli)
+Questo progetto è stato generato con la versione 17. [Angular CLI](https://github.com/angular/angular-cli)
 
 ## Licenza
 
