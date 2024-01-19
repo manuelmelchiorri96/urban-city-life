@@ -24,9 +24,6 @@
                         <mat-icon class="icon">account_circle</mat-icon>
                         <div>{{ post.userName }}</div>
                     </div>
-                    <button mat-icon-button *ngIf="isMyPost(post.user_id)">
-                        <mat-icon class="edit">edit</mat-icon>
-                    </button>
                 </mat-card-header>
 
                 <mat-card-content>
@@ -73,8 +70,10 @@
 
                 <mat-card class="view-commenti" *ngIf="vediCommenti === post.id">
                     <mat-card-content *ngFor="let commento of commentiPost">
-                        <mat-icon>account_circle</mat-icon>
-                        <div>{{commento.name}}</div>
+                        <div class="top">
+                            <mat-icon>account_circle</mat-icon>
+                            <div>{{commento.name}}</div>
+                        </div>
                         <p>{{commento.body}}</p>
                     </mat-card-content>
                 </mat-card>

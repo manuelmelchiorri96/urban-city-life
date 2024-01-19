@@ -46,10 +46,6 @@ export class DashboardComponent implements OnInit {
     this.visualizzaAllPost();
   }
 
-  isMyPost(user_id: number) {
-    return user_id === Number(this.localStorageService.getId());
-  }
-
   aggiungiPost() {
     this.nuovoPost = {
       user_id: Number(this.localStorageService.getId()),

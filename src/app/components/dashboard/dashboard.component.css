@@ -24,6 +24,11 @@ p {
     margin-top: 30px;
 }
 
+.box-top-page .right .mat-form-field button {
+    width: 200px;
+    margin-bottom: 50px;
+}
+
 .box-post {
     max-width: 85%;
     margin: 0 auto;
@@ -111,4 +116,22 @@ mat-card-actions button {
     transform: scale(1.5);
     color: #2d3e94;
     margin-top: 30px;
+}
+
+.view-commenti .top {
+    display: flex;
+    color: #2d3e94;
+}
+
+.view-commenti .top div {
+    margin-top: 3px;
+    margin-left: 8px;
+    font-weight: 500;
+}
+
+.view-commenti p {
+    font-weight: 200;
+    font-size: 0.8rem;
+    letter-spacing: 0.6px;
+    margin-left: 34px;
 }
