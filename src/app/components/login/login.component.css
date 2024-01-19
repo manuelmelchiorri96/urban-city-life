@@ -15,6 +15,11 @@ h2 {
 }
 
 .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
     height: 92.5vh;
 }
 
@@ -29,6 +34,7 @@ p {
 .prendi-token {
     position: relative;
     top: 20px;
+    font-weight: 300;
 }
 
 a {
@@ -43,4 +49,8 @@ a:hover {
 .error {
     color: #f44336;
     font-size: 1.5rem;
+}
+
+button {
+    margin-top: 20px;
 }

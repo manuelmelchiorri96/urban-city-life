@@ -1,4 +1,4 @@
-<div class="d-flex flex-column justify-content-center align-items-center box mt-5">
+<div class="box">
     <h2>Login Form</h2>
 
     <form class="form" (ngSubmit)="onSubmit()">
@@ -35,9 +35,9 @@
                 href="https://gorest.co.in/my-account/access-tokens">qui</a>.</p>
 
         <button *ngIf="!prendiNuovoToken" mat-raised-button color="primary" type="submit"
-            class="full-width mt-3">Ottieni link per token di login</button>
+            class="full-width">Ottieni link per token di login</button>
         <button *ngIf="prendiNuovoToken" mat-raised-button color="primary" type="submit"
-            class="full-width mt-3">Login</button>
+            class="full-width">Login</button>
         <p class="pt-5 error" *ngIf="error">{{ error }}</p>
     </form>
 </div>

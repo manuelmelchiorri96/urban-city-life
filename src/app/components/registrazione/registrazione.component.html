@@ -1,4 +1,4 @@
-<div class="d-flex flex-column justify-content-center align-items-center box mt-5">
+<div class="box">
     <h2>Form di registrazione</h2>
 
     <form class="form" (ngSubmit)="onSubmit()">
@@ -43,7 +43,7 @@
             'Non hai un token? clicca'}} <a target="_blank"
                 href="https://gorest.co.in/my-account/access-tokens">qui</a>.</p>
 
-        <button mat-raised-button color="primary" type="submit" class="full-width mt-3">{{isLogged ? 'Aggiungi user':
+        <button mat-raised-button color="primary" type="submit" class="full-width">{{isLogged ? 'Aggiungi user':
             'Registrati'}}</button>
         <p class="pt-5 error" *ngIf="messageErr">
             {{ messageErr }}
@@ -51,4 +51,3 @@
         <p class="pt-5 success" *ngIf="messageSuccess">{{ messageSuccess }}</p>
     </form>
 </div>
-
