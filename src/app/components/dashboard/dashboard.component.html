@@ -1,1 +1,88 @@
-<p>dashboard works!</p>
+<div class="box-top-page">
+    <div class="left">
+        <h2>Post</h2>
+        <p>Visualizza tutti i post</p>
+        <p>Metti mi piace, commenta</p>
+    </div>
+    <div class="right">
+        <div class="mat-form-field">
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Aggiungi post</mat-label>
+                <textarea [(ngModel)]="bodyPost" matInput></textarea>
+            </mat-form-field>
+            <button *ngIf="bodyPost" mat-button (click)="aggiungiPost()">Aggiungi</button>
+        </div>
+    </div>
+</div>
+
+<ng-container class="post" *ngIf="allPost.length > 0">
+    <ng-container *ngFor="let post of allPost">
+
+        <mat-card>
+            <mat-card-header>
+                <div class="card-header-left">
+                    <mat-icon class="icon">account_circle</mat-icon>
+                    <div>{{ post.userName }}</div>
+                </div>
+                <button mat-icon-button *ngIf="isMyPost(post.user_id)">
+                    <mat-icon class="edit">edit</mat-icon>
+                </button>
+            </mat-card-header>
+
+            <mat-card-content>
+                {{ post.body }}
+            </mat-card-content>
+
+            <mat-form-field *ngIf="commentoStato[post.id]" class="full-width" appearance="fill">
+                <mat-label>Inserisci commento</mat-label>
+                <textarea [(ngModel)]="commento.body" matInput></textarea>
+            </mat-form-field>
+
+            <mat-card-actions>
+                <button mat-button (click)="gestisciAzione(post.id, 'miPiace')">
+                    <mat-icon [ngClass]="{'mi-piace-attivo': miPiaceStato[post.id]}">
+                        {{ miPiaceStato[post.id] ? 'thumb_up' : 'thumb_up' }}
+                    </mat-icon>
+                    {{ miPiaceStato[post.id] ? 'Mi piace' : 'Mi piace' }}
+                </button>
+                <button mat-button *ngIf="!commentoStato[post.id]" (click)="gestisciAzione(post.id, 'commenta')">
+                    <mat-icon>{{ commentoStato[post.id] ? 'cancel' : 'comment' }}</mat-icon>
+                    {{ commentoStato[post.id] ? 'Annulla commento' : 'Commenta' }}
+                </button>
+                <button mat-button *ngIf="commentoStato[post.id]" (click)="gestisciAzione(post.id, 'inviaCommento')">
+                    <mat-icon>send</mat-icon>
+                    Invia commento
+                </button>
+                <button mat-button *ngIf="commentoStato[post.id]" (click)="gestisciAzione(post.id, 'commenta')">
+                    <mat-icon>cancel</mat-icon>
+                    Annulla commento
+                </button>
+            </mat-card-actions>
+
+            <mat-card-content class="commenti" (click)="visualizzaCommenti(post.id)">
+                {{ numeroCommentiMap[post.id] > 1 || numeroCommentiMap[post.id] === 0 ? numeroCommentiMap[post.id] + '
+                commenti' :
+                numeroCommentiMap[post.id] + '
+                commento' }}
+            </mat-card-content>
+
+            <mat-card class="view-commenti" *ngIf="vediCommenti === post.id">
+                <mat-card-content *ngFor="let commento of commentiPost">
+                    <mat-icon>account_circle</mat-icon>
+                    <div>{{commento.name}}</div>
+                    <p>{{commento.body}}</p>
+                </mat-card-content>
+            </mat-card>
+
+        </mat-card>
+    </ng-container>
+</ng-container>
+
+<ng-container *ngIf="allPost.length === 0">
+    <p class="centrato">
+        Nessun utente con post disponibile.
+        <br>
+        <mat-icon class="icona-mi-dispiace">sentiment_very_dissatisfied</mat-icon>
+    </p>
+</ng-container>
+
