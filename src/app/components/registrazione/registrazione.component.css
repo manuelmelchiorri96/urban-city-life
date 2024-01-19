@@ -1,0 +1,47 @@
+h2 {
+    color: #3f51b5;
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+
+.form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.box {
+    height: 92.5vh;
+}
+
+p {
+    line-height: 1.3;
+}
+
+.prendi-token {
+    position: relative;
+    top: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #3f51b5;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.success {
+    color: #3f51b5;
+    font-size: 1.5rem;
+}
+
+.error {
+    color: #f44336;
+    font-size: 1.5rem;
+}

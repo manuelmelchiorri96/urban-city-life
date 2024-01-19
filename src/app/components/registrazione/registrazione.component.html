@@ -1,1 +1,54 @@
-<p>registrazione works!</p>
+<div class="d-flex flex-column justify-content-center align-items-center box mt-5">
+    <h2>Form di registrazione</h2>
+
+    <form class="form" (ngSubmit)="onSubmit()">
+        <mat-form-field class="full-width">
+            <mat-label>Nome</mat-label>
+            <input type="text" matInput [formControl]="nomeFormControl" (input)="capitalizeFirstLetter()">
+            <mat-error *ngIf="nomeFormControl.hasError('required')">
+                Il nome è <strong>richiesto</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Genere</mat-label>
+            <mat-select [formControl]="genereFormControl">
+                <mat-option [value]="genere" *ngFor="let genere of generi">{{genere}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="genereFormControl.hasError('required')">
+                Il campo "Genere" è <strong>richiesto</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput [formControl]="emailFormControl" (input)="convertEmailToLowerCase()">
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                Inserisci un e-mail valida
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+                L'e-mail è <strong>richiesta</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Token</mat-label>
+            <input type="password" matInput [formControl]="tokenFormControl">
+            <mat-error *ngIf="tokenFormControl.hasError('required')">
+                Il Token è <strong>richiesto</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <p class="prendi-token">{{isLogged ? 'Crea token, clicca':
+            'Non hai un token? clicca'}} <a target="_blank"
+                href="https://gorest.co.in/my-account/access-tokens">qui</a>.</p>
+
+        <button mat-raised-button color="primary" type="submit" class="full-width mt-3">{{isLogged ? 'Aggiungi user':
+            'Registrati'}}</button>
+        <p class="pt-5 error" *ngIf="messageErr">
+            {{ messageErr }}
+        </p>
+        <p class="pt-5 success" *ngIf="messageSuccess">{{ messageSuccess }}</p>
+    </form>
+</div>
+
