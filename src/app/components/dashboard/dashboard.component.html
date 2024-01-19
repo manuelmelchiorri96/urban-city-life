@@ -39,7 +39,8 @@
                 </mat-form-field>
 
                 <mat-card-actions>
-                    <button mat-raised-button color="primary" mat-button (click)="gestisciAzione(post.id, 'miPiace')">
+                    <button *ngIf="!commentoStato[post.id]" mat-raised-button color="primary" mat-button
+                        (click)="gestisciAzione(post.id, 'miPiace')">
                         <mat-icon [ngClass]="{'mi-piace-attivo': miPiaceStato[post.id]}">
                             {{ miPiaceStato[post.id] ? 'thumb_up' : 'thumb_up' }}
                         </mat-icon>
@@ -53,7 +54,7 @@
                     <button mat-raised-button color="primary" mat-button *ngIf="commentoStato[post.id]"
                         (click)="gestisciAzione(post.id, 'inviaCommento')">
                         <mat-icon>send</mat-icon>
-                        Invia commento
+                        Invia
                     </button>
                     <button mat-raised-button color="primary" mat-button *ngIf="commentoStato[post.id]"
                         (click)="gestisciAzione(post.id, 'commenta')">

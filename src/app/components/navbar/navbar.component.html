@@ -6,14 +6,14 @@
 
     <mat-icon (click)="viewMenuMobile()" class="menu-mobile">menu</mat-icon>
     <div *ngIf="mobileMenu" class="box-menu-mobile">
-        <button class="menu-big" mat-button routerLink="/home"
-            [class.current-page]="isCurrentPage('home')">Home</button>
-        <button class="menu-big" mat-button routerLink="/dashboard"
-            [class.current-page]="isCurrentPage('dashboard')">Dashboard</button>
-        <button class="menu-big" mat-button routerLink="/utenti"
-            [class.current-page]="isCurrentPage('utenti')">Utenti</button>
-        <button class="menu-big" mat-button routerLink="/account"
-            [class.current-page]="isCurrentPage('account')">Account</button>
+        <button class="menu-big" mat-button routerLink="/home" [class.current-page]="isCurrentPage('home')"
+            (click)="chiudiMenuMobile()">Home</button>
+        <button class="menu-big" mat-button routerLink="/dashboard" [class.current-page]="isCurrentPage('dashboard')"
+            (click)="chiudiMenuMobile()">Dashboard</button>
+        <button class="menu-big" mat-button routerLink="/utenti" [class.current-page]="isCurrentPage('utenti')"
+            (click)="chiudiMenuMobile()">Utenti</button>
+        <button class="menu-big" mat-button routerLink="/account" [class.current-page]="isCurrentPage('account')"
+            (click)="chiudiMenuMobile()">Account</button>
         <button class="menu-big" mat-button (click)="startLogoutConfirmation()">Logout</button>
     </div>
 
@@ -43,4 +43,3 @@
         </mat-card-actions>
     </mat-card>
 </mat-toolbar>
-

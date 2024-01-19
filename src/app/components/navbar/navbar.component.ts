@@ -29,6 +29,12 @@ export class NavbarComponent {
     }
   }
 
+  chiudiMenuMobile() {
+    if (this.mobileMenu) {
+      this.mobileMenu = false;
+    }
+  }
+
   isCurrentPage(route: string) {
     return this.currentRouter === route;
   }

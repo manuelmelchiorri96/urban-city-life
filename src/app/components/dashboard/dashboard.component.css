@@ -60,7 +60,8 @@ p {
 mat-card-content {
     margin-top: 20px;
     font-weight: 200;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.6px;
 }
 
 mat-card-actions button {

@@ -90,7 +90,6 @@ mat-card-content {
 }
 
 .conferma-delete {
-
     background-color: #3f51b5;
     color: #fff;
     margin-right: 10px;
@@ -98,7 +97,6 @@ mat-card-content {
 }
 
 .annulla-delete {
-
     background-color: #3f51b5;
     color: #fff;
     margin-left: 10px;
@@ -125,4 +123,21 @@ button {
         width: 30%;
     }
 
+}
+
+@media (max-width: 568px) {
+
+    .box-top {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    mat-form-field {
+        max-width: 100%;
+    }
+
+    .crea-user {
+        width: 150px;
+        margin-bottom: 40px;
+    }
 }
