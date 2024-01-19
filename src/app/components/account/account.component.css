@@ -1,0 +1,59 @@
+.box-account {
+    max-width: 85%;
+    margin: 100px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.box-account h2 {
+    font-size: 1.7rem;
+    color: #3f51b5;
+    margin: 40px 0 30px 0;
+    text-align: left;
+}
+
+.full-width {
+    width: 100%;
+}
+
+mat-icon {
+    transform: scale(1.5);
+}
+
+button {
+    margin-top: 120px;
+    padding: 20px;
+}
+
+button:last-of-type {
+    margin-left: 20px;
+}
+
+mat-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    z-index: 9999;
+}
+
+mat-card-content {
+    margin-bottom: 30px;
+}
+
+.p-delete {
+    color: #3f51b5;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.conferma-delete,
+.annulla-delete {
+    background-color: #3f51b5;
+    color: #fff;
+    margin-top: 0;
+    padding: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+}

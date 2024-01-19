@@ -1,1 +1,61 @@
-<p>account works!</p>
+<div class="box-account" *ngIf="user">
+    <h2>
+        <mat-icon>account_circle</mat-icon>
+        {{ nomeUtente }}'s Profile
+    </h2>
+
+    <mat-form-field class="full-width">
+        <mat-label>Name</mat-label>
+        <input type="text" matInput [(ngModel)]="user.name" [disabled]="!editing">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput [(ngModel)]="user.email" [disabled]="!editing">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>Gender</mat-label>
+        <mat-select [(ngModel)]="user.gender" [disabled]="!editing">
+            <mat-option value="male">male</mat-option>
+            <mat-option value="female">female</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>Status</mat-label>
+        <mat-select [(ngModel)]="user.status" [disabled]="!editing">
+            <mat-option value="active">active</mat-option>
+            <mat-option value="inactive">inactive</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <div *ngIf="editing; else notEditingTemplate">
+        <button mat-raised-button color="primary" (click)="saveChanges()">
+            <mat-icon>save</mat-icon> Salva modifiche
+        </button>
+        <button mat-raised-button color="warn" (click)="cancelEdit()">
+            <mat-icon>cancel</mat-icon> Annulla
+        </button>
+    </div>
+    <ng-template #notEditingTemplate>
+        <div>
+            <button mat-raised-button color="primary" (click)="editProfile()">
+                <mat-icon>edit</mat-icon> Modifica account
+            </button>
+            <button mat-raised-button color="warn" (click)="startDeleteProfile()">
+                <mat-icon>delete</mat-icon> Elimina account
+            </button>
+        </div>
+    </ng-template>
+</div>
+
+<mat-card *ngIf="startDelete" class="delete-card">
+    <mat-card-content>
+        <p class="p-delete">Sei sicuro di voler eliminare il tuo account?</p>
+    </mat-card-content>
+    <mat-card-actions class="d-flex justify-content-center align-items-center">
+        <button class="conferma-delete" mat-button (click)="deleteAccount()">Conferma</button>
+        <button class="annulla-delete" mat-button (click)="cancelDelete()">Annulla</button>
+    </mat-card-actions>
+</mat-card>
