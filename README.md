@@ -1,5 +1,11 @@
 # UrbanCityLife
 
+## Screenshot
+
+![Home](./src/assets/screenshot_1.png) | ![Dashboard](./src/assets/screenshot_2.png)
+--- | ---
+![Utenti](./src/assets/screenshot_3.png) | ![Account](./src/assets/screenshot_4.png)
+
 ## Panoramica
 
 L'applicazione si concentra sullo sviluppo urbano e si integra con la piattaforma GoRest per fornire funzionalità di gestione degli utenti, post e commenti. Le principali funzionalità includono:
