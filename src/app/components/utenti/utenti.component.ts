@@ -23,7 +23,7 @@ export class UtentiComponent implements OnInit {
     'status',
     'elimina-utente',
   ];
-  dataSource!: MatTableDataSource<User>;
+  dataSource = new MatTableDataSource<User>();
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort: MatSort = new MatSort();
@@ -71,7 +71,6 @@ export class UtentiComponent implements OnInit {
       .trim()
       .toLowerCase();
 
-    // Se non hai alcun filtro, mostra tutti gli utenti
     if (!filterValue) {
       this.dataSource.filter = '';
       return;
@@ -99,6 +98,8 @@ export class UtentiComponent implements OnInit {
   }
 
   confirmDelete() {
+    this.showDeleteConfirmation = false;
+
     this.httpService.eliminaUser(this.idUtenteDaEliminare).subscribe({
       next: (data) => {
         this.leggiUtenti();
@@ -107,7 +108,6 @@ export class UtentiComponent implements OnInit {
         console.error(error);
       },
     });
-    this.showDeleteConfirmation = false;
   }
 
   eliminaUtente(userId: number) {
