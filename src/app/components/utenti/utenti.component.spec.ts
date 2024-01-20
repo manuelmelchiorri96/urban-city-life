@@ -1,9 +1,4 @@
-import {
-  ComponentFixture,
-  TestBed,
-  fakeAsync,
-  tick,
-} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UtentiComponent } from './utenti.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,8 +10,6 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { By } from '@angular/platform-browser';
-import { of, throwError } from 'rxjs';
 import { MatCardModule } from '@angular/material/card';
 
 describe('UtentiComponent', () => {

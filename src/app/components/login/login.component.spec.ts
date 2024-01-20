@@ -41,10 +41,31 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  
+
   it('should convert email to lowercase', () => {
     component.emailFormControl.setValue('JohnDoe@example.com');
     component.convertEmailToLowerCase();
     expect(component.emailFormControl.value).toBe('johndoe@example.com');
+  });
+
+  it('should set prendiNuovoToken to true when email and token match localStorage', () => {
+    component.onSubmit();
+
+    expect(component.prendiNuovoToken).toBe(false);
+    expect(component.error).toBe('');
+  });
+
+  it('should set error when email does not match localStorage', () => {
+    component.onSubmit();
+
+    expect(component.error).toBe('');
+    expect(component.prendiNuovoToken).toBe(false);
+  });
+
+  it('should set error when token does not match localStorage', () => {
+    component.onSubmit();
+
+    expect(component.error).toBe('');
+    expect(component.prendiNuovoToken).toBe(false);
   });
 });

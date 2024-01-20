@@ -1,9 +1,4 @@
-import {
-  ComponentFixture,
-  TestBed,
-  fakeAsync,
-  tick,
-} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DashboardComponent } from './dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -16,7 +11,6 @@ import { of } from 'rxjs';
 import { HttpService } from '../../services/http-service/http.service';
 import { LocalStorageService } from '../../services/core/local-storage.service';
 import { MatCardModule } from '@angular/material/card';
-import { Post } from '../../models/interface/post';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;

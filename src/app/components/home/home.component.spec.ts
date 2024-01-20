@@ -1,9 +1,4 @@
-import {
-  ComponentFixture,
-  TestBed,
-  tick,
-  fakeAsync,
-} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomeComponent } from './home.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { LocalStorageService } from '../../services/core/local-storage.service';

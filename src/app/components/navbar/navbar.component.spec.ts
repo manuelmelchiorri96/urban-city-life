@@ -5,7 +5,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { By } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { LocalStorageService } from '../../services/core/local-storage.service';
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
@@ -81,6 +80,4 @@ describe('NavbarComponent', () => {
   it('should have mobileMenu set to false initially', () => {
     expect(component.mobileMenu).toBeFalsy();
   });
-
-
 });
