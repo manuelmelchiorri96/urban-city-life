@@ -94,15 +94,15 @@ export class RegistrazioneComponent implements OnInit {
               ', hai sei registrato correttamente ' +
               nome;
           }
-          this.messageErr = '';
         },
         error: (err) => {
           console.error('Errore durante la richiesta:', err);
-          this.messageSuccess = '';
+          console.log(err.status);
+
           if (err.status === 401) {
-            this.messageErr = nome + ', hai messo un token non valido.';
+            this.messageErr = 'Token non valido.';
           } else if (err.status === 422) {
-            this.messageErr = nome + ", l'e-mail inserita è già esistente.";
+            this.messageErr = "L'e-mail inserita è già esistente.";
           }
         },
       });
