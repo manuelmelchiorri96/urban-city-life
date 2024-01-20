@@ -34,37 +34,43 @@ mat-icon {
 
 mat-card {
     position: absolute;
-    top: 400px;
+    top: 40vh;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 50px;
+    padding: 2em;
+    max-width: 85%;
     z-index: 9999;
 }
 
-mat-card-content {
-    margin-bottom: 30px;
-}
-
-button {
-    color: #3f51b5;
-    margin-right: 5px;
+.logout-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .box-actions-logout {
     display: flex;
     align-items: center;
-    justify-content: start;
-    max-width: 80%;
-    margin: 0 auto;
+    justify-content: center;
+    margin-top: 1em;
 }
 
 .p-logout {
     color: #3f51b5;
+    text-align: center;
+
+    @media screen and (max-width: 600px) {
+        font-size: 1.1rem;
+    }
 }
 
 .conferma-logout,
 .annulla-logout {
-    padding: 20px;
+    background-color: #3f51b5;
+    color: #fff;
+    padding: 1em 2em;
+    margin: 0 0.5em;
 }
 
 .menu-mobile {
