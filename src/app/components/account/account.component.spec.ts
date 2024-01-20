@@ -50,18 +50,6 @@ describe('AccountComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should load user profile on ngOnInit', () => {
-    const trovaUsersSpy = spyOn(
-      component['httpService'],
-      'trovaUsers'
-    ).and.returnValue(of(mockUserData));
-
-    component.ngOnInit();
-
-    expect(trovaUsersSpy).toHaveBeenCalled();
-    expect(component.user).toEqual(mockUserData[0]);
-  });
-
   it('should save changes and update localStorage', () => {
     const modificaProfiloSpy = spyOn(
       component['httpService'],

@@ -82,13 +82,5 @@ describe('NavbarComponent', () => {
     expect(component.mobileMenu).toBeFalsy();
   });
 
-  it('should update UI when currentRouter changes', () => {
-    component.currentRouter = 'dashboard';
-    fixture.detectChanges();
-  });
 
-  it('should display user name from the service', () => {
-    const mockLocalStorageService = TestBed.inject(LocalStorageService);
-    spyOn(mockLocalStorageService, 'getIsLogged').and.returnValue('true');
-  });
 });

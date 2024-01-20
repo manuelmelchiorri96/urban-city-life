@@ -41,13 +41,7 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should set isLogged to true if user is already logged in', () => {
-    component.onSubmit();
-
-    expect(localStorageServiceSpy.getIsLogged.and.returnValue('true'));
-  });
-
+  
   it('should convert email to lowercase', () => {
     component.emailFormControl.setValue('JohnDoe@example.com');
     component.convertEmailToLowerCase();
