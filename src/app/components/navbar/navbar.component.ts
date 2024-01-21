@@ -55,5 +55,6 @@ export class NavbarComponent {
     this.showLogoutConfirmation = false;
     this.localStorageService.setIsLogged(false);
     this.router.navigate(['login']);
+    this.chiudiMenuMobile();
   }
 }
