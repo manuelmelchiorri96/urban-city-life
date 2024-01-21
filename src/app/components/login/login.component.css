@@ -46,9 +46,11 @@ a:hover {
     text-decoration: underline;
 }
 
-.error {
-    color: #f44336;
+.message {
+    color: #3f51b5;
     font-size: 1.5rem;
+    padding-top: 30px;
+    text-align: center;
 }
 
 button {

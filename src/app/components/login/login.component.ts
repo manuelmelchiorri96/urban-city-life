@@ -11,7 +11,7 @@ import { HttpService } from '../../services/http-service/http.service';
 })
 export class LoginComponent implements OnInit {
   isLogged: boolean = false;
-  error: string = '';
+  message: string = '';
   prendiNuovoToken: boolean = false;
 
   constructor(
@@ -47,16 +47,16 @@ export class LoginComponent implements OnInit {
         token !== ''
       ) {
         this.prendiNuovoToken = true;
-        this.error = '';
+        this.message = '';
       } else if (email !== this.localStorageService.getEmail()) {
-        this.error = "L' e-mail inserita è errata";
+        this.message = "L' e-mail inserita è errata";
       } else if (token !== this.localStorageService.getToken()) {
-        this.error = 'Il token inserito è errato';
+        this.message = 'Il token inserito è errato';
       }
       if (this.prendiNuovoToken && this.nuovoTokenFormControl.value) {
         const nuovoToken = this.nuovoTokenFormControl.value;
         this.localStorageService.setToken(nuovoToken);
-        this.error = '';
+        this.message = '';
 
         if (email === this.localStorageService.getEmail()) {
           this.httpService.trovaUsers().subscribe({
@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
             },
             error: (error) => {
               console.error('Error fetching data:', error);
-              this.error = 'Nuovo token non valido';
+              this.message = 'Nuovo token non valido';
             },
           });
         }

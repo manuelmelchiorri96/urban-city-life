@@ -34,10 +34,10 @@
         <p *ngIf="prendiNuovoToken" class="prendi-token">Prendi il token di login <a target="_blank"
                 href="https://gorest.co.in/my-account/access-tokens">qui</a>.</p>
 
-        <button *ngIf="!prendiNuovoToken" mat-raised-button color="primary" type="submit"
-            class="full-width">Ottieni link per token di login</button>
+        <button *ngIf="!prendiNuovoToken" mat-raised-button color="primary" type="submit" class="full-width">Ottieni
+            link per token di login</button>
         <button *ngIf="prendiNuovoToken" mat-raised-button color="primary" type="submit"
             class="full-width">Login</button>
-        <p class="pt-5 error" *ngIf="error">{{ error }}</p>
+        <p class="message" *ngIf="message">{{ message }}</p>
     </form>
 </div>

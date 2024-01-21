@@ -45,9 +45,7 @@
 
         <button mat-raised-button color="primary" type="submit" class="full-width">{{isLogged ? 'Aggiungi user':
             'Registrati'}}</button>
-        <p class="pt-5 error" *ngIf="messageErr">
-            {{ messageErr }}
-        </p>
-        <p class="pt-5 success" *ngIf="messageSuccess">{{ messageSuccess }}</p>
+
+        <p class="message" *ngIf="message">{{ message }}</p>
     </form>
 </div>

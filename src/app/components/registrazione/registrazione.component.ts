@@ -16,8 +16,7 @@ export class RegistrazioneComponent implements OnInit {
     gender: '',
     status: '',
   };
-  messageErr: string = '';
-  messageSuccess: string = '';
+  message: string = '';
   isLogged: boolean = false;
   generi: any[] = ['male', 'female'];
 
@@ -82,16 +81,20 @@ export class RegistrazioneComponent implements OnInit {
       this.httpService.registraUser(this.user).subscribe({
         next: (data) => {
           if (!this.isLogged) {
-            this.messageSuccess = nome + ', ti sei registrato correttamente.';
+            this.message =
+              genere === 'male'
+                ? nome + ', ti sei registrato correttamente.'
+                : nome + ', ti sei registrata correttamente.';
+
             this.localStorageService.setName(nome);
             this.localStorageService.setEmail(email);
             this.localStorageService.setGenere(genere);
             this.localStorageService.setStatus(status);
             this.localStorageService.setId(data['id']);
           } else {
-            this.messageSuccess =
+            this.message =
               this.localStorageService.getName() +
-              ', hai sei registrato correttamente ' +
+              ', hai registrato correttamente ' +
               nome;
           }
         },
@@ -100,9 +103,9 @@ export class RegistrazioneComponent implements OnInit {
           console.log(err.status);
 
           if (err.status === 401) {
-            this.messageErr = 'Token non valido.';
+            this.message = 'Token non valido.';
           } else if (err.status === 422) {
-            this.messageErr = "L'e-mail inserita è già esistente.";
+            this.message = "L' e-mail inserita è già esistente.";
           }
         },
       });
