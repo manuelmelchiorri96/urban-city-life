@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpService } from '../../services/http-service/http.service';
-import { Observable, throwError } from 'rxjs';
+import { throwError } from 'rxjs';
 
 describe('RegistrazioneComponent', () => {
   let component: RegistrazioneComponent;
@@ -77,7 +77,7 @@ describe('RegistrazioneComponent', () => {
 
     component.onSubmit();
 
-    expect(component.messageErr).toBe('Token non valido.');
+    expect(component.message).toBe('Token non valido.');
   });
 
   it('should set messageErr when email is already registered', () => {
@@ -95,6 +95,6 @@ describe('RegistrazioneComponent', () => {
 
     component.onSubmit();
 
-    expect(component.messageErr).toBe("L'e-mail inserita è già esistente.");
+    expect(component.message).toBe("L' e-mail inserita è già esistente.");
   });
 });

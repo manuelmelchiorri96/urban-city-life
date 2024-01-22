@@ -52,20 +52,20 @@ describe('LoginComponent', () => {
     component.onSubmit();
 
     expect(component.prendiNuovoToken).toBe(false);
-    expect(component.error).toBe('');
+    expect(component.message).toBe('');
   });
 
   it('should set error when email does not match localStorage', () => {
     component.onSubmit();
 
-    expect(component.error).toBe('');
+    expect(component.message).toBe('');
     expect(component.prendiNuovoToken).toBe(false);
   });
 
   it('should set error when token does not match localStorage', () => {
     component.onSubmit();
 
-    expect(component.error).toBe('');
+    expect(component.message).toBe('');
     expect(component.prendiNuovoToken).toBe(false);
   });
 });
